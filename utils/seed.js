@@ -1,2 +1,2 @@
 const connection = require('../config/connection');
-const { Reaction, Post, Friend } = require('../models');
+const { Thought, User } = require('../models');

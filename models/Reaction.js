@@ -1,13 +1,37 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 // Schema for what makes up a comment
 const reactionSchema = new Schema({
-    text: String,
-    // TODO: Emoji? or string?
-    username: String,
-  });
+    reactionId: {
+      type: Schema.Types.ObjectId,
+      default: function() {
+        return new Types.ObjectId()
+      }
+    },
+    reactionBody: {
+      type: String,
+      required: true,
+      maxlength: 280
+    },
+    username: {
+      type: String,
+      required: true
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: function(time) {
+        return new Date(time).toLocaleDateString()
+      }
+    }
+},
+{
+  toJSON: {
+    getters: true,
+    virtuals: true,
+  },
+  id: false,
+}
+);
   
-  // Initialize the Reaction model
-  const Reaction = model('reaction', reactionSchema);
-  
-  module.exports = Reaction;
+  module.exports = reactionSchema;

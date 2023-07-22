@@ -1,29 +1,22 @@
 const names = [
     'Alan',
-    'Andrew',
     'Blake',
-    'Claire',
     'Dan',
     'Drew',
     'Jane',
-    'Jen',
     'Jessica',    
-    'Jordyn',
     'Karl',
-    'Parker',
-    'Steve',
-    'Thomas',
-    'Vivian',
+];
+
+const thought = [
+    'Javascript is so fun!',
+    'I prefer working on the front-end',
+    'Javascript is easy to use',
 ];
 
 const reactions = [
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
+    'I beg to differ',
+    'I agree with you!',
+    'I love it too!',
 ];
 
