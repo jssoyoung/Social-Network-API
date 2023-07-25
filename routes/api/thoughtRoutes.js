@@ -4,13 +4,18 @@ const {
   getThoughts,
   createThought,
   deleteThought,
+  updateThought,
   addReaction,
   removeReaction,
 } = require('../../controllers/thoughtController');
 
-router.route('/').get(getThoughts).thought(createThought);
+// /api/thoughts
+router.route('/').get(getThoughts).post(createThought);
 
+// /api/thoughts/:thoughtId
 router.route('/:thoughtId').get(getSingleThought);
+router.route('/:thoughtId').delete(deleteThought);
+router.route('/:thoughtId').put(updateThought);
 
 // /api/thoughts/:thoughtId/reactions
 router.route('/:thoughtId/reactions').post(addReaction);

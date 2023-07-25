@@ -1,6 +1,6 @@
 const { Schema, model, Types } = require('mongoose');
 
-// Schema for what makes up a comment
+// Schema for reactions
 const reactionSchema = new Schema({
     reactionId: {
       type: Schema.Types.ObjectId,
