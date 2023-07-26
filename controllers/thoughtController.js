@@ -36,15 +36,15 @@ module.exports = {
   // create a new thought
   createThought(req, res) {
     Thought.create(req.body)
-      .then((thought) => {
-        return Post.findOneAndUpdate(
+      .then(({ _id }) => {
+        return User.findOneAndUpdate(
           { _id: req.body.userId },
-          { $push: { thoughts: thought._id } },
+          { $push: { thoughts: _id } },
           { new: true }
         );
       })
-      .then((post) =>
-        !post
+      .then((thought) =>
+        !thought
           ? res
               .status(404)
               .json({ message: 'thought created, but no users with this ID' })
@@ -113,7 +113,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  
+
   // Remove reaction from a thought
   removeReaction(req, res) {
     Thought.findOneAndUpdate(
