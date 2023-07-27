@@ -6,7 +6,7 @@ This project is a social network API. The user could use this API to write down 
 
 Here is the link to the github for this project: https://github.com/jssoyoung/Social-Network-API
 
-Here is the link to the website demonstration video: 
+Here is the link to the website demonstration video: https://drive.google.com/file/d/1WNJ-EmxEw5E9j2RAM8FWoIEZjMFJvuVa/view
 
 ## Installation
 
