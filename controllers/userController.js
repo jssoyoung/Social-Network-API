@@ -23,13 +23,21 @@ module.exports = {
     },
 
     // Create a user
-    createUser(req, res) {
-      User.create(req.body)
-        .then((user) => res.json(user))
-        .catch((err) => {
-          console.log(err);
-          return res.status(500).json(err);
-        });
+    async createUser(req, res) {
+      try {
+        console.log(req.body)
+        const userData = await User.create(req.body);
+        console.log(userData)
+        res.json(userData)
+      } catch (err) {
+        console.log(err)
+      }
+      // User.create(req.body)
+      //   .then((user) => res.json(user))
+      //   .catch((err) => {
+      //     console.log(err);
+      //     return res.status(500).json(err);
+      //   });
     },
 
     // Delete a user
